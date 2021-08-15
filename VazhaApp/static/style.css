@@ -1,0 +1,305 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          padding:0;
+		  margin:0;
+}
+
+
+:root {
+    --gray: #848484;
+    --gray-dark: #2c2c2c;
+    --gray-darker: #181818;
+}
+
+@font-face {
+  font-family: 'Vazha';
+  src: url('fonts/Vazha.woff')  format('woff');
+
+}
+
+@font-face {
+  font-family: 'handwritten';
+  src: url('fonts/handwirtten.woff')  format('woff');
+
+}
+
+
+a {
+	text-decoration: none;
+	color: white;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+	
+}
+
+
+
+/* Header */
+header {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	background-color: var(--gray-darker);
+	box-shadow:0 0 5px 5px black;
+	padding: 20px 40px 20px 0;
+	transition: 0.5s top ease-in-out;
+}
+
+#logo {
+	visibility: hidden;
+}
+
+.navbar {
+	display: flex;
+	justify-content: center;
+}
+
+header ul {
+	list-style-type: none;
+}
+
+.navbar li {
+	margin-left: 20px;
+	padding-bottom: 5px;
+}
+
+.navbar a {
+	color: white;
+	font: 36px 'Vazha';
+	text-shadow:5px 5px 5px black;
+}
+
+.navbar li:hover {
+	border-bottom: 1px solid white;
+	transition: 0.3s border-bottom ease-in-out;
+}
+
+
+/* Section */
+
+section {
+	min-height: 100vh;
+	width: 100%;
+}
+
+
+
+/* quote */
+#main-quote {
+	display: flex;
+	flex-direction:  column;
+	justify-content: center;
+	align-items: center;
+	background-image: url(img/vazha1.jpg);
+	background-position: center;
+	background-size: cover;
+	box-shadow:0 0 100px 5vw black inset;
+}
+
+#main-quote .quote-block {
+	padding: 40px 5px;
+	font-size: 26px;
+
+}
+
+
+/*  main quote transition animation classes    */
+
+.quote-left {
+	transform: translate(-200px, 0);
+	opacity: 0;
+}
+
+.quote-center {
+	transform: translate(0, 0);
+	opacity: 1;
+	transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+
+.quote-right {
+	transform: translate(200px, 0);
+	opacity: 0;
+	transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+
+/* quotes */
+
+#quotes {
+	background-color: var(--gray-darker);
+	display: flex;
+	flex-direction:  column;
+	justify-content: center;
+	align-items: center;
+}
+
+.quote-block {
+	display: flex;
+	flex-direction:  column;
+	justify-content: center;
+	align-items: center;
+	margin: 60px 0;
+	color: white;
+	font-size: 20px;
+	text-shadow:5px 5px 5px black;
+	padding: 0 10px;
+	max-width: 400px;
+	
+}
+
+.the-work {
+	margin: 30px 0 0 25vw;
+}
+
+.ornament {
+	height:150px;
+	width:150px;
+	background-image:url('img/ornamentebi.png');
+}
+
+
+
+/* add */
+
+#add {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--gray-dark);
+	padding: 100px 0;
+	
+}
+	
+#add h2{
+	color: white;
+	font: 50px 'Vazha';
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction:  column;
+	justify-content: center;
+}
+
+label {
+	color: white;
+	font: 26px 'Vazha';
+	margin-bottom: 10px;
+}
+
+input[type=text], input[type=email], textarea{
+	width: 300px;
+	background-color: var(--gray-darker);
+	color: white;
+	padding: 14px 20px;
+	margin-bottom: 20px;
+	border: none;
+	border-bottom: 1px solid white;
+}
+
+input[type=submit] {
+	width: 100%;
+	background-color: var(--gray-darker);
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	box-shadow:3px 3px 4px 1px black;
+}
+
+input[type=submit]:hover{
+	box-shadow: none;
+}
+
+textarea {
+  resize: none;
+}
+
+
+
+/* footer */
+footer {
+	font: 30px 'handwritten';
+	background-color: var(--gray-darker);
+	height: 10vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+footer a{
+	color: var(--gray);
+}
+
+footer a:hover {
+	color: white;
+	transition: 0.3s color ease-in-out;
+}
+
+
+
+
+@media (min-width:600px){
+	/* header */
+	header{
+		justify-content: flex-end;
+		padding-right:1.56%;
+		background-color: transparent;
+		box-shadow: none;
+	}
+	
+	
+	#logo {
+		visibility: visible;
+		font: 46px 'Vazha';
+		position: fixed;
+		left: 3vw;
+		background-color: transparent;
+		padding: 0 40px 0 0;
+	}
+	
+	/* body */
+	
+	/* quotes */
+	.quote-block {
+		max-width: 60vw;
+	}
+	
+	
+	/* add */
+	#add {
+		background: url(img/vazha2.jpg);
+		background-position: center;
+		background-size: cover;
+		box-shadow:0 0 100px 5vw black inset;
+		
+	}
+	
+	#form {
+		background-color: var(--gray-dark);
+		padding: 50px 40px; 
+	}
+	
+	input[type=text], input[type=email], textarea{
+		width: 400px;
+	}
+	
+}

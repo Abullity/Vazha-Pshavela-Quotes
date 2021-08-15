@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ka">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>ვაჟა-ფშაველას ამონარიდები</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="icon" href="{{ url_for('static', filename='img/logo.png') }}" type="image/x-icon">
+		
+	</head>
+	<body>
+		<header>
+			<nav class="navbar">
+				<a href="/" id="logo">vaJa</a>
+				<ul class="navbar">
+					<li><a id="nav-quote" href="#main-quote">amonaridi</a></li>
+					<li><a href="#quotes">krebuli</a></li>
+					<li><a href="#add">daamate</a></li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<section id="main-quote">
+				<div id="main-quote-block" class="quote-block">
+				</div>
+			</section>
+			
+			<section id="quotes">
+				{% for quote in quotes %}
+				<div class="quote-block">
+					<p class="quote">{{ quote[1] }}</p>
+					<p class="the-work">'{{ quote[2] }}'</p>
+					<div class="ornament" style="background-position: -{{ ((quote[0] - 1) % 36) * 150 }}px 0px;""></div>
+				</div>
+				{% endfor %}
+			</section>
+			
+			<section id="add">
+				<div id="form">
+					<h2>daamateT amonaridi</h2>
+					<form action='/add' method="POST">
+						<label for="email">meili</label>
+						<input id="email" name="email" type="email" placeholder="მეილი"></input>
+						<label for="input-quote">amonaridi</label>
+						<textarea id="input-quote" name="input-quote" rows=5
+						placeholder="ამონარიდი"></textarea>
+						<label for="input-work">nawarmoebi</label>
+						<input id="input-work" name="input-work" type="text" 
+						placeholder="ნაწარმოები"></input>
+						<input type='submit' value="დაამატე">
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<a href="https://github.com/Abullity">©The August Georgian</a>
+		</footer>
+		<script src="{{ url_for('static', filename='scripts/dynamicHeader.js') }}"></script>
+		<script src="{{ url_for('static', filename='scripts/generateMainQuote.js') }}"></script>
+	</body>
+</html>
