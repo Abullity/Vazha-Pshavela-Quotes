@@ -1,7 +1,7 @@
 # Vazha-Pshavela-Quotes
 The web app lets you add and get random Vazha Pshavela quotes
 
-<b> Note the page is in Georgian language!</b>
+<b> Note that the page is in Georgian language!</b>
 
 ## Description
 The web app lets you add Vazha Pshavela's quotes, which along with other quotes stored in database will be displayed on main page.
