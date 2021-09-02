@@ -1,6 +1,8 @@
 # Vazha-Pshavela-Quotes
 The web app lets you add and get random Vazha Pshavela quotes
 
+[Hosted on Heroku](http://vazhaquotes.herokuapp.com/)
+
 <b> Note that the page is in Georgian language!</b>
 
 ## Description
